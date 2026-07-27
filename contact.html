@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Intelligence Produit</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  :root{
+    --bg:#141417; --bg-soft:#1D1D22; --card:#FFFFFF; --card-line:#EBEAF0;
+    --ink:#1A1A22; --ink-soft:#6B6B76; --indigo:#5B4FE0; --indigo-soft:#EDEBFC;
+    --pink:#D65DB1;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Inter', sans-serif; line-height:1.6; }
+  a{ color:inherit; text-decoration:none; }
+
+  nav{ padding:22px 20px 6px; }
+  .nav-inner{ max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .logo{ display:flex; align-items:center; }
+  .nav-links{ display:flex; gap:26px; font-size:14px; font-weight:500; color:#C8C8D0; }
+  .nav-links a:hover{ color:#fff; }
+  .nav-links a.active{ color:#fff; border-bottom:2px solid var(--indigo); padding-bottom:4px; }
+  .nav-cta{ background:var(--indigo); color:#fff; font-size:13.5px; font-weight:600; padding:9px 16px; border-radius:8px; }
+
+  .page-head{ max-width:1100px; margin:0 auto; padding:50px 20px 30px; text-align:center; }
+  .eyebrow{ color:#9A9AA6; font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; }
+  .page-head h1{ color:#fff; font-size:30px; font-weight:800; margin-bottom:12px; }
+  .page-head p{ color:#9A9AA6; max-width:480px; margin:0 auto; font-size:14.5px; }
+
+  .form-wrap{ max-width:620px; margin:10px auto 90px; padding:0 20px; }
+  .form-card{ background:var(--card); border-radius:20px; padding:44px 48px; box-shadow:0 20px 50px rgba(0,0,0,0.35); }
+
+  .field{ margin-bottom:20px; }
+  .field label{ display:block; font-size:13px; font-weight:600; color:var(--ink-soft); margin-bottom:6px; }
+  .field input, .field textarea{
+    width:100%;
+    padding:12px 14px;
+    border:1.5px solid var(--card-line);
+    border-radius:10px;
+    font-size:14.5px;
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    background:#fff;
+    transition:border-color .2s;
+    outline:none;
+  }
+  .field input:focus, .field textarea:focus{ border-color:var(--indigo); }
+  .field textarea{ resize:vertical; min-height:140px; }
+
+  .row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+
+  .captcha-wrap{ margin:20px 0; }
+
+  .submit-btn{
+    width:100%;
+    padding:14px;
+    background:var(--indigo);
+    color:#fff;
+    font-size:15px;
+    font-weight:700;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    transition:background .2s;
+    margin-top:4px;
+  }
+  .submit-btn:hover{ background:#4b3fd0; }
+
+  .success-msg{
+    display:none;
+    background:var(--indigo-soft);
+    color:var(--indigo);
+    border-radius:12px;
+    padding:18px 20px;
+    font-size:14px;
+    font-weight:600;
+    text-align:center;
+    margin-top:20px;
+  }
+
+  footer{ max-width:1100px; margin:0 auto; padding:20px 20px 40px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; color:#7A7A85; font-size:12.5px; }
+
+  @media (max-width:600px){
+    .form-card{ padding:30px 24px; }
+    .row{ grid-template-columns:1fr; }
+  }
+</style>
+<!-- hCaptcha -->
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="kaskadia-homepage-mockup-v2.html"><img src="logo-intelligence-produit.png" alt="Intelligence Produit" style="height:42px;"></a>
+    <div class="nav-links">
+      <a href="qui-suis-je.html">Qui suis-je ?</a>
+      <a href="offres.html">Offres</a>
+      <a href="outils.html">Outils</a>
+      <a href="ressources-demo.html">Ressources</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <a class="nav-cta" href="https://calendly.com/greggerardpro/30min" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  </div>
+</nav>
+
+<div class="page-head">
+  <div class="eyebrow">Contact</div>
+  <h1>Parlons de votre projet.</h1>
+  <p>Un message suffit pour démarrer. Je vous réponds sous 24h.</p>
+</div>
+
+<div class="form-wrap">
+  <div class="form-card">
+    <!--
+      CONFIGURATION REQUISE :
+      1. Obtenez une clé d'accès Web3Forms gratuite sur https://web3forms.com
+         Entrez greggerardpro@gmail.com → copiez la clé → remplacez a7987e54-ed61-40a0-92a4-527fa9d9415f ci-dessous
+      2. Obtenez une clé hCaptcha gratuite sur https://www.hcaptcha.com
+         Créez un site → copiez la "Site Key" → remplacez 5998ee42-aab6-47fe-9a96-5f8a4d425576 ci-dessous
+    -->
+    <form id="contact-form"
+          action="https://api.web3forms.com/submit"
+          method="POST">
+
+      <!-- Web3Forms config -->
+      <input type="hidden" name="access_key" value="a7987e54-ed61-40a0-92a4-527fa9d9415f">
+      <input type="hidden" name="subject" value="Nouveau message — Intelligence Produit">
+      <input type="hidden" name="from_name" value="Intelligence Produit">
+      <input type="hidden" name="redirect" value="false">
+      <!-- Anti-spam honeypot -->
+      <input type="checkbox" name="botcheck" style="display:none;">
+
+      <div class="row">
+        <div class="field">
+          <label for="prenom">Prénom</label>
+          <input type="text" id="prenom" name="prenom" placeholder="Marie" required>
+        </div>
+        <div class="field">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" placeholder="Dupont" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="marie@entreprise.fr" required>
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Décrivez votre projet ou votre problématique en quelques mots..." required></textarea>
+      </div>
+
+      <div class="captcha-wrap">
+        <div class="h-captcha" data-sitekey="5998ee42-aab6-47fe-9a96-5f8a4d425576"></div>
+      </div>
+
+      <button type="submit" class="submit-btn">Envoyer le message</button>
+    </form>
+
+    <div class="success-msg" id="success-msg">
+      ✓ Message envoyé ! Je vous réponds dans les 24h.
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div style="display:flex;flex-direction:column;gap:4px;">
+    <span>Intelligence Produit — Conseil produit pour PME/PMI · Lyon, Rhône-Alpes</span>
+    <span style="opacity:.6;font-size:11px;">Rochebrune Investments SASU — 45 avenue du 8 mai 1945, 69160 Tassin La Demi-Lune</span>
+  </div>
+  <span>intelligenceproduit.com</span>
+</footer>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.submit-btn');
+    btn.textContent = 'Envoi en cours…';
+    btn.disabled = true;
+
+    const data = new FormData(form);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      });
+      const json = await res.json();
+      if (json.success) {
+        form.style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+      } else {
+        btn.textContent = 'Erreur — réessayez';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Erreur — réessayez';
+      btn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>

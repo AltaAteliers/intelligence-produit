@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intelligence Produit — Ressources (démo)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700;800&display=swap');
+
+  :root{
+    --bg:#141417;
+    --bg-soft:#1D1D22;
+    --card:#FFFFFF;
+    --card-line:#EBEAF0;
+    --ink:#1A1A22;
+    --ink-soft:#6B6B76;
+    --indigo:#5B4FE0;
+    --indigo-soft:#EDEBFC;
+    --pink:#D65DB1;
+    --teal:#1E9E86;
+    --teal-soft:#E4F5F1;
+    --amber:#E8A33D;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Inter', sans-serif; line-height:1.6; }
+  a{ color:inherit; text-decoration:none; }
+
+  nav{ padding:22px 20px 6px; }
+  .nav-inner{ max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .logo{ display:flex; align-items:center; }
+  .nav-links{ display:flex; gap:26px; font-size:14px; font-weight:500; color:#C8C8D0; }
+  .nav-links a.active{ color:#fff; border-bottom:2px solid var(--indigo); padding-bottom:4px; }
+  .nav-cta{ background:var(--indigo); color:#fff; font-size:13.5px; font-weight:600; padding:9px 16px; border-radius:8px; }
+
+  .page-head{ max-width:1100px; margin:0 auto; padding:50px 20px 30px; text-align:center; }
+  .eyebrow{ color:#9A9AA6; font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; }
+  .page-head h1{ color:#fff; font-size:30px; font-weight:800; margin-bottom:12px; }
+  .page-head p{ color:#9A9AA6; max-width:520px; margin:0 auto; font-size:14.5px; }
+
+  .filters{ max-width:1100px; margin:0 auto; padding:0 20px 30px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .filter-pill{ font-size:12.5px; font-weight:600; padding:7px 14px; border-radius:20px; background:var(--bg-soft); color:#C8C8D0; }
+  .filter-pill.active{ background:var(--indigo); color:#fff; }
+
+  .article-grid{ max-width:1100px; margin:0 auto; padding:0 20px 70px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .article-card{ background:var(--card); border-radius:16px; padding:22px; display:flex; flex-direction:column; gap:8px; }
+  .article-card .cat{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; width:fit-content; padding:3px 10px; border-radius:20px; }
+  .cat-diag{ background:var(--indigo-soft); color:var(--indigo); }
+  .cat-org{ background:var(--teal-soft); color:var(--teal); }
+  .cat-design{ background:#FBEBD3; color:var(--amber); }
+  .article-card h3{ font-size:16.5px; font-weight:700; line-height:1.35; margin-top:4px; }
+  .article-card p{ font-size:13px; color:var(--ink-soft); flex:1; }
+  .article-card .read{ font-size:12.5px; font-weight:700; color:var(--indigo); }
+  .article-card:hover{ box-shadow:0 10px 30px rgba(0,0,0,0.15); }
+
+  /* --- Detailed article view --- */
+  .detail-wrap{ max-width:760px; margin:0 auto 90px; background:var(--card); border-radius:20px; padding:48px 52px; box-shadow:0 20px 50px rgba(0,0,0,0.35); }
+  .detail-wrap .cat{ font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--indigo); margin-bottom:14px; }
+  .detail-wrap h1{ font-size:28px; font-weight:800; line-height:1.25; margin-bottom:20px; color:var(--ink); }
+  .detail-wrap h2{ font-size:18px; font-weight:700; margin:28px 0 10px; color:var(--ink); }
+  .detail-wrap p{ font-size:14.5px; color:#3A3A44; margin-bottom:14px; }
+  .detail-wrap ul{ margin:0 0 14px 20px; }
+  .detail-wrap li{ font-size:14.5px; color:#3A3A44; margin-bottom:6px; }
+  .detail-wrap .callout{
+    background:var(--indigo-soft);
+    border-radius:12px;
+    padding:16px 18px;
+    font-size:13.5px;
+    color:var(--indigo);
+    font-style:italic;
+    margin-top:24px;
+  }
+  .section-divider{ max-width:1100px; margin:0 auto; padding:0 20px; }
+  .section-divider hr{ border:none; border-top:1px solid #26262D; margin:20px 0 50px; }
+  .back-link{ display:block; max-width:760px; margin:0 auto 16px; color:#9A9AA6; font-size:13px; font-weight:600; padding:0 4px; }
+  .back-link:hover{ color:#fff; }
+
+  @media (max-width:860px){
+    .article-grid{ grid-template-columns:1fr; }
+    .detail-wrap{ padding:30px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="kaskadia-homepage-mockup-v2.html"><img src="logo-intelligence-produit.png" alt="Intelligence Produit" style="height:42px;"></a>
+    <div class="nav-links">
+      <a href="qui-suis-je.html">Qui suis-je ?</a>
+      <a href="offres.html">Offres</a>
+      <a href="outils.html">Outils</a>
+      <a href="#" class="active">Ressources</a>
+    </div>
+    <a class="nav-cta" href="https://calendly.com/greggerardpro/30min" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  </div>
+</nav>
+
+<div class="page-head">
+  <div class="eyebrow">Ressources</div>
+  <h1>Des méthodes concrètes, pas des généralités.</h1>
+  <p>Diagnostic produit, organisation interne, design, des articles écrits pour des dirigeants et responsables produit en PME/PMI qui veulent des leviers actionnables.</p>
+</div>
+
+<div class="filters">
+  <span class="filter-pill active">Tous</span>
+  <span class="filter-pill">Diagnostic</span>
+  <span class="filter-pill">Organisation</span>
+  <span class="filter-pill">Conception</span>
+</div>
+
+<div class="article-grid">
+  <a class="article-card" href="article-diagnostic-360.html" style="display:flex;">
+    <span class="cat cat-diag">Diagnostic</span>
+    <h3>Pourquoi votre produit ne se vend pas — méthode à 360°</h3>
+    <p>Une chaîne de diagnostic du marketing interne jusqu'au client final, pour localiser la vraie cause avant d'agir.</p>
+    <span class="read">Lire l'article →</span>
+  </a>
+  <a class="article-card" href="article-objets-frontieres.html" style="display:flex;">
+    <span class="cat cat-org">Organisation</span>
+    <h3>Les objets frontières, ou comment faire accoucher un projet en interne</h3>
+    <p>Un concept simple pour aligner marketing, R&amp;D et commerce sans créer un poste dédié.</p>
+    <span class="read">Lire l'article →</span>
+  </a>
+  <a class="article-card" href="article-design-pme.html" style="display:flex;">
+    <span class="cat cat-design">Conception</span>
+    <h3>Le design, un investissement rentable même en PME</h3>
+    <p>Ce que le design apporte concrètement à la perception, à l'usage et à la marge d'un produit industriel.</p>
+    <span class="read">Lire l'article →</span>
+  </a>
+  <a class="article-card" href="article-chaine-valeur-porter.html" style="display:flex;">
+    <span class="cat cat-diag">Diagnostic</span>
+    <h3>La chaîne de valeur de Porter : voir son produit de bout en bout</h3>
+    <p>Comment dérouler un produit de sa conception jusqu'à la livraison pour repérer où la valeur (et la marge) s'évaporent.</p>
+    <span class="read">Lire l'article →</span>
+  </a>
+  <a class="article-card" href="article-ishikawa.html" style="display:flex;">
+    <span class="cat cat-diag">Diagnostic</span>
+    <h3>Le diagramme d'Ishikawa : creuser les causes sans s'éparpiller</h3>
+    <p>L'arête de poisson pour explorer toutes les familles de causes d'un problème avant de conclure, et ne pas traiter le mauvais symptôme.</p>
+    <span class="read">Lire l'article →</span>
+  </a>
+  <a class="article-card" href="article-fmea-amdec.html" style="display:flex;">
+    <span class="cat cat-diag">Diagnostic</span>
+    <h3>AMDEC : prioriser les défaillances avant qu'elles coûtent cher</h3>
+    <p>L'outil de référence pour quantifier et classer les risques qualité, et décider où agir en premier sur un produit ou un procédé.</p>
+    <span class="read">Lire l'article →</span>
+  </a>
+  <a class="article-card" href="article-5-pourquoi.html" style="display:flex;">
+    <span class="cat cat-diag">Diagnostic</span>
+    <h3>Les 5 Pourquoi : remonter à la cause racine sans se perdre</h3>
+    <p>Cinq questions successives pour aller au-delà du symptôme apparent et trouver la vraie origine d'un problème récurrent.</p>
+    <span class="read">Lire l'article →</span>
+  </a>
+  <a class="article-card" href="article-diagnostic-combiné.html" style="display:flex;">
+    <span class="cat cat-diag">Diagnostic</span>
+    <h3>Porter, Ishikawa, AMDEC, 5 Pourquoi : comment les combiner</h3>
+    <p>La séquence exacte pour enchaîner ces quatre méthodes et conduire un diagnostic produit complet en deux à trois jours de travail effectif.</p>
+    <span class="read">Lire l'article →</span>
+  </a>
+  <a class="article-card" href="article-build-it-yourself.html" style="display:flex;">
+    <span class="cat cat-org">Organisation</span>
+    <h3>Build It Yourself : pourquoi l'IA change la logique du logiciel en PME/PMI</h3>
+    <p>Quand construire son propre outil métier est devenu plus rapide et moins cher qu'acheter un logiciel généraliste, et comment s'y mettre.</p>
+    <span class="read">Lire l'article →</span>
+  </a>
+  <a class="article-card" href="article-voir-autrement.html" style="display:flex;">
+    <span class="cat cat-org">Organisation</span>
+    <h3>Voir autrement pour réussir</h3>
+    <p>La méthode de positionnement d'April Dunford en 10 étapes, pour que votre produit soit perçu à sa juste valeur par les bons clients.</p>
+    <span class="read">Lire l'article →</span>
+  </a>
+  <a class="article-card" href="article-product-manager-entre-2-chaises.html" style="display:flex;">
+    <span class="cat cat-org">Organisation</span>
+    <h3>Entre 2 chaises</h3>
+    <p>Le product manager doit penser technique, commerce, finance et communication en même temps, et assumer une posture de leader sans autorité hiérarchique.</p>
+    <span class="read">Lire l'article →</span>
+  </a>
+  <a class="article-card" href="article-sales-book.html" style="display:flex;">
+    <span class="cat cat-org">Commercial</span>
+    <h3>Le sales book : l'outil que vos commerciaux n'ont pas</h3>
+    <p>Son utilité, son contenu, pourquoi en faire un au lancement, et ce qu'il en coûte de ne pas l'avoir.</p>
+    <span class="read">Lire l'article →</span>
+  </a>
+</div>
+
+</body>
+</html>

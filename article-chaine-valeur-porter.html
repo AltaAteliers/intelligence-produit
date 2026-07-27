@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La chaîne de valeur de Porter appliquée au diagnostic produit — Intelligence Produit</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700;800&display=swap');
+  :root{
+    --bg:#141417; --bg-soft:#1D1D22; --card:#FFFFFF; --card-line:#EBEAF0;
+    --ink:#1A1A22; --ink-soft:#6B6B76; --indigo:#5B4FE0; --indigo-soft:#EDEBFC;
+    --pink:#D65DB1; --teal:#1E9E86; --teal-soft:#E4F5F1; --amber:#E8A33D;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Inter', sans-serif; line-height:1.6; }
+  a{ color:inherit; text-decoration:none; }
+  nav{ padding:22px 20px 6px; }
+  .nav-inner{ max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .logo{ display:flex; align-items:center; }
+  .nav-links{ display:flex; gap:26px; font-size:14px; font-weight:500; color:#C8C8D0; }
+  .nav-links a.active{ color:#fff; border-bottom:2px solid var(--indigo); padding-bottom:4px; }
+  .nav-cta{ background:var(--indigo); color:#fff; font-size:13.5px; font-weight:600; padding:9px 16px; border-radius:8px; }
+  .back-link{ display:block; max-width:760px; margin:30px auto 0; color:#9A9AA6; font-size:13px; font-weight:600; padding:0 20px; }
+  .back-link:hover{ color:#fff; }
+  .content{ max-width:760px; margin:16px auto 90px; background:var(--card); border-radius:20px; padding:48px 52px; box-shadow:0 20px 50px rgba(0,0,0,0.35); }
+  .cat{ font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--indigo); margin-bottom:14px; }
+  .content h1{ font-size:28px; font-weight:800; line-height:1.25; margin-bottom:20px; color:var(--ink); }
+  .content h2{ font-size:18px; font-weight:700; margin:28px 0 10px; color:var(--ink); }
+  .content h3{ font-size:15px; font-weight:700; margin:18px 0 6px; color:var(--ink); }
+  .content p{ font-size:14.5px; color:#3A3A44; margin-bottom:14px; }
+  .content ul{ margin:0 0 14px 20px; }
+  .content li{ font-size:14.5px; color:#3A3A44; margin-bottom:8px; }
+  .callout{ background:var(--indigo-soft); border-radius:12px; padding:16px 18px; font-size:13.5px; color:var(--indigo); font-style:italic; margin-top:24px; }
+  @media (max-width:860px){ .content{ padding:30px 24px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="kaskadia-homepage-mockup-v2.html"><img src="logo-intelligence-produit.png" alt="Intelligence Produit" style="height:42px;"></a>
+    <div class="nav-links">
+      <a href="qui-suis-je.html">Qui suis-je ?</a>
+      <a href="offres.html">Offres</a>
+      <a href="outils.html">Outils</a>
+      <a href="ressources-demo.html" class="active">Ressources</a>
+    </div>
+    <a class="nav-cta" href="https://calendly.com/greggerardpro/30min" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  </div>
+</nav>
+
+<a href="ressources-demo.html" class="back-link">← Retour aux ressources</a>
+
+<div class="content">
+  <div class="cat">Diagnostic</div>
+  <h1>La chaîne de valeur de Porter : voir son produit de bout en bout</h1>
+
+  <p>Quand un produit sous-performe, la tentation est de chercher le problème là où on le voit (souvent au bout de la chaîne, chez le client ou dans les chiffres de vente). La chaîne de valeur de Porter renverse cette logique : elle oblige à remonter l'ensemble du parcours, de la conception jusqu'à la livraison, pour repérer où la valeur se crée, et où elle se perd.</p>
+
+  <h2>Le principe : la valeur se construit par couches</h2>
+  <p>Michael Porter a formalisé dans les années 1980 l'idée que toute entreprise traverse une suite d'activités qui, chacune, ajoute (ou retire) de la valeur au produit final. Ces activités se répartissent en deux familles.</p>
+
+  <h3>Les activités primaires</h3>
+  <p>Ce sont les étapes directement impliquées dans la création et la livraison du produit :</p>
+  <ul>
+    <li><b>Logistique interne</b> : réception, stockage et gestion des matières premières et composants entrants.</li>
+    <li><b>Opérations / production</b> : transformation des entrants en produit fini.</li>
+    <li><b>Logistique externe</b> : stockage du produit fini, expédition, distribution.</li>
+    <li><b>Marketing et ventes</b> : positionnement, communication, force de vente, accès au marché.</li>
+    <li><b>Services</b> : installation, formation, SAV, maintenance après la vente.</li>
+  </ul>
+
+  <h3>Les activités de soutien</h3>
+  <p>Elles n'interviennent pas directement dans le produit, mais conditionnent la performance de toutes les activités primaires :</p>
+  <ul>
+    <li><b>Infrastructure</b> : direction générale, finance, juridique.</li>
+    <li><b>Gestion des ressources humaines</b> : recrutement, compétences, culture.</li>
+    <li><b>Développement technologique</b> : R&amp;D, conception, amélioration des procédés.</li>
+    <li><b>Approvisionnement</b> : achats, sélection et gestion des fournisseurs.</li>
+  </ul>
+
+  <h2>Appliquer la chaîne à un diagnostic produit</h2>
+  <p>En PME/PMI, on n'a pas besoin de remplir un tableau académique à vingt cases. L'outil est utile de façon beaucoup plus directe : poser la question "à quelle étape la valeur décroche ?" et remonter la chaîne jusqu'à trouver la réponse.</p>
+  <p>En pratique, cela donne une lecture en deux temps. D'abord, l'intérieur de l'entreprise : est-ce que la conception répond à un vrai besoin client ? Est-ce que les opérations livrent la qualité et les délais promis ? Est-ce que les commerciaux ont les bons arguments et les bons outils ? Ensuite, l'extérieur : est-ce que le produit atteint les bons circuits de distribution ? Est-ce que les revendeurs ont intérêt à le pousser ? Est-ce que le client final vit l'expérience que la conception a prévue ?</p>
+
+  <h2>Ce que la chaîne ne fait pas</h2>
+  <p>La chaîne de valeur localise la zone qui pose problème, elle ne creuse pas la cause racine à l'intérieur de cette zone. Pour ça, il faut un autre outil : le diagramme d'Ishikawa, les 5 Pourquoi, ou une AMDEC selon la nature du problème. La chaîne sert à ne pas se tromper de zone avant d'investir du temps dans l'analyse.</p>
+
+  <div class="callout">Un produit qui stagne a presque toujours un point de rupture précis dans sa chaîne. Trente minutes d'échange suffisent souvent pour le localiser.</div>
+</div>
+
+</body>
+</html>

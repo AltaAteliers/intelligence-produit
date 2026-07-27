@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intelligence Produit — Offres</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700;800&display=swap');
+  :root{
+    --bg:#141417; --bg-soft:#1D1D22; --card:#FFFFFF; --card-line:#EBEAF0;
+    --ink:#1A1A22; --ink-soft:#6B6B76; --indigo:#5B4FE0; --indigo-soft:#EDEBFC;
+    --pink:#D65DB1; --teal:#1E9E86; --teal-soft:#E4F5F1; --amber:#E8A33D;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Inter', sans-serif; line-height:1.6; }
+  a{ color:inherit; text-decoration:none; }
+  nav{ padding:22px 20px 6px; }
+  .nav-inner{ max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .logo{ display:flex; align-items:center; }
+  .nav-links{ display:flex; gap:26px; font-size:14px; font-weight:500; color:#C8C8D0; }
+  .nav-links a.active{ color:#fff; border-bottom:2px solid var(--indigo); padding-bottom:4px; }
+  .nav-cta{ background:var(--indigo); color:#fff; font-size:13.5px; font-weight:600; padding:9px 16px; border-radius:8px; }
+
+  .page-head{ max-width:1100px; margin:0 auto; padding:50px 20px 30px; text-align:center; }
+  .eyebrow{ color:#9A9AA6; font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; }
+  .page-head h1{ color:#fff; font-size:30px; font-weight:800; margin-bottom:12px; }
+  .page-head p{ color:#9A9AA6; max-width:540px; margin:0 auto; font-size:14.5px; }
+
+  .offer-grid{ max-width:1100px; margin:0 auto; padding:10px 20px 60px; display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .offer-card{ background:var(--card); border-radius:16px; padding:26px 24px; display:flex; flex-direction:column; gap:10px; }
+  .offer-card .tag{ font-size:11px; font-weight:700; padding:4px 10px; border-radius:20px; width:fit-content; }
+  .tag-indigo{ background:var(--indigo-soft); color:var(--indigo); }
+  .tag-teal{ background:var(--teal-soft); color:var(--teal); }
+  .tag-amber{ background:#FBEBD3; color:var(--amber); }
+  .offer-card h3{ font-size:18px; font-weight:700; margin-top:4px; }
+  .offer-card p{ font-size:13.5px; color:var(--ink-soft); flex:1; }
+  .offer-card ul{ margin:6px 0 6px 18px; }
+  .offer-card li{ font-size:13px; color:var(--ink-soft); margin-bottom:4px; }
+  .offer-card .cta{ font-size:13px; font-weight:700; color:var(--indigo); margin-top:8px; }
+
+  .cta{ padding:20px 20px 70px; }
+  .cta-card{ max-width:1100px; margin:0 auto; background:linear-gradient(120deg,var(--indigo),var(--pink)); border-radius:20px; padding:44px; text-align:center; color:#fff; }
+  .cta-card h2{ font-size:24px; font-weight:800; margin-bottom:10px; }
+  .cta-card p{ opacity:.9; margin-bottom:22px; font-size:14.5px; }
+  .btn{ font-size:14px; font-weight:600; padding:12px 20px; border-radius:10px; display:inline-flex; }
+  .cta-card .btn{ background:#fff; color:var(--indigo); }
+
+  footer{ max-width:1100px; margin:0 auto; padding:20px 20px 40px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; color:#7A7A85; font-size:12.5px; }
+
+  @media (max-width:860px){ .offer-grid{ grid-template-columns:1fr; } }
+  @media (max-width:1100px) and (min-width:861px){ .offer-grid{ grid-template-columns:repeat(2,1fr); } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="kaskadia-homepage-mockup-v2.html"><img src="logo-intelligence-produit.png" alt="Intelligence Produit" style="height:42px;"></a>
+    <div class="nav-links">
+      <a href="qui-suis-je.html">Qui suis-je ?</a>
+      <a href="offres.html" class="active">Offres</a>
+      <a href="outils.html">Outils</a>
+      <a href="ressources-demo.html">Ressources</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="nav-cta" href="https://calendly.com/greggerardpro/30min" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  </div>
+</nav>
+
+<div class="page-head">
+  <div class="eyebrow">Offres</div>
+  <h1>Cinq façons de travailler ensemble.</h1>
+  <p>Du diagnostic ponctuel à l'accompagnement long terme (le format s'adapte à la taille de votre problème, pas l'inverse).</p>
+</div>
+
+<div class="offer-grid">
+  <div class="offer-card">
+    <span class="tag tag-indigo">Diagnostic</span>
+    <h3>Diagnostic produit à 360°</h3>
+    <p>Un produit ne se vend pas comme prévu ? On déroule la chaîne complète (marketing, R&amp;D, commerce, opérations, logistique, revendeur, client final, SAV) pour trouver la vraie cause avant d'agir.</p>
+    <ul>
+      <li>Mission courte, 2 à 4 semaines</li>
+      <li>Livrable : rapport de diagnostic + plan d'action priorisé</li>
+    </ul>
+    <a class="cta" href="https://calendly.com/greggerardpro/30min" target="_blank" rel="noopener">En discuter →</a>
+  </div>
+  <div class="offer-card">
+    <span class="tag tag-teal">Roadmap</span>
+    <h3>Accompagnement projet</h3>
+    <p>L'objectif est de mettre le projet sur les rails en s'assurant de la parfaite compréhension du besoin marché, de sa traduction en cahier des charges fonctionnel pour les équipes techniques, et de son exécution commerciale via un sales book.</p>
+    <ul>
+      <li>Durée : 2 à 4 mois</li>
+      <li>Accompagnement récurrent, format à définir ensemble</li>
+      <li>Livrable : roadmap partagée + rituels de suivi</li>
+    </ul>
+    <a class="cta" href="https://calendly.com/greggerardpro/30min" target="_blank" rel="noopener">En discuter →</a>
+  </div>
+  <div class="offer-card">
+    <span class="tag tag-amber">IA & efficacité</span>
+    <h3>Des outils métiers dédiés</h3>
+    <p>Je ne vends pas du temps passé. Je vends des résultats. Grâce à l'IA, je suis capable d'analyser en quelques heures des centaines de documents (retours clients, données SAV, études de marché, benchmarks concurrentiels) là où un consultant classique y passerait des jours. Cette puissance de traitement me permet aussi de concevoir des outils sur mesure rapidement : simulateurs, grilles d'analyse, générateurs de contenus produits. Ce que vous payez, c'est de l'efficacité et de la profondeur d'analyse, pas un tarif journalier.</p>
+    <ul>
+      <li>Durée : 2 à 6 mois</li>
+      <li>Analyse documentaire accélérée et synthèse exploitable immédiatement</li>
+      <li>Outils métier sur mesure livrés en jours, pas en mois</li>
+    </ul>
+    <a class="cta" href="https://calendly.com/greggerardpro/30min" target="_blank" rel="noopener">En discuter →</a>
+  </div>
+  <div class="offer-card">
+    <span class="tag tag-indigo">Terrain</span>
+    <h3>Face à face client</h3>
+    <p>Confronter un nouveau produit à la réalité du marché (pas seulement à celui qui paie, mais à l'ensemble de la chaîne de valeur : utilisateurs, revendeurs, prescripteurs). C'est souvent ce que les PME hésitent à faire, par crainte de découvrir un désalignement. Pourtant, c'est précisément là que réside la richesse de l'exercice : identifier les écarts permet de redéfinir la valeur réelle du produit, et de créer à terme quelque chose qui rencontrera véritablement son marché.</p>
+    <ul>
+      <li>Durée : 1 à 3 mois</li>
+      <li>Interviews clients, observations terrain, confrontation réseau de distribution</li>
+      <li>Livrable : synthèse des apprentissages + recommandations produit actionnables</li>
+    </ul>
+    <a class="cta" href="https://calendly.com/greggerardpro/30min" target="_blank" rel="noopener">En discuter →</a>
+  </div>
+  <div class="offer-card" style="grid-column:1/-1;">
+    <span class="tag tag-teal">Création d'activités &amp; Diversification</span>
+    <h3>Création d'activités &amp; Diversification</h3>
+    <p>Savoir se réinventer pour conquérir de nouveaux territoires est une nécessité un jour ou l'autre pour toutes les entreprises. Le marché jusqu'ici dominant faiblit progressivement et aucun relais de croissance ne semble venir à l'horizon. Prenons les choses en main avec une méthode travaillant aussi bien sur l'objectif (trouver de nouveaux marchés) que sur le comment : fédérer les équipes en interne, initier un élan de curiosité.</p>
+    <p style="font-size:13.5px;color:var(--ink-soft);">Lancer une nouvelle activité, c'est naviguer dans l'incertitude avec méthode : anticiper les besoins avant qu'ils s'expriment, poser les bonnes questions à la bonne cible, provoquer le débat pour faire émerger les besoins dormants à potentiel. Ce travail demande de tenir une vision dans le flou, confronter les hypothèses au terrain, et transformer progressivement l'incertitude en décisions actionnables.</p>
+    <ul>
+      <li>Accompagnement sur 6 à 12 mois</li>
+      <li>Exploration marché, définition de l'offre, validation terrain, go-to-market</li>
+      <li>Livrable continu : jalons, apprentissages, décisions documentées</li>
+    </ul>
+    <a class="cta" href="https://calendly.com/greggerardpro/30min" target="_blank" rel="noopener">En discuter →</a>
+  </div>
+</div>
+
+<section class="cta">
+  <div class="cta-card">
+    <h2>Pas sûr du format qu'il vous faut ?</h2>
+    <p>30 minutes suffisent pour cadrer ensemble le bon point de départ.</p>
+    <a class="btn" href="https://calendly.com/greggerardpro/30min" target="_blank" rel="noopener">Réserver un créneau</a>
+  </div>
+</section>
+
+<footer>
+  <span>Intelligence Produit — Conseil produit pour PME/PMI · Lyon, Rhône-Alpes</span>
+  <span>intelligenceproduit.com</span>
+</footer>
+
+</body>
+</html>

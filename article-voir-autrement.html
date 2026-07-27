@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voir autrement pour réussir — Intelligence Produit</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700;800&display=swap');
+  :root{
+    --bg:#141417; --bg-soft:#1D1D22; --card:#FFFFFF; --card-line:#EBEAF0;
+    --ink:#1A1A22; --ink-soft:#6B6B76; --indigo:#5B4FE0; --indigo-soft:#EDEBFC;
+    --pink:#D65DB1; --teal:#1E9E86; --teal-soft:#E4F5F1; --amber:#E8A33D;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Inter', sans-serif; line-height:1.6; }
+  a{ color:inherit; text-decoration:none; }
+  nav{ padding:22px 20px 6px; }
+  .nav-inner{ max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .logo{ display:flex; align-items:center; }
+  .nav-links{ display:flex; gap:26px; font-size:14px; font-weight:500; color:#C8C8D0; }
+  .nav-links a.active{ color:#fff; border-bottom:2px solid var(--indigo); padding-bottom:4px; }
+  .nav-cta{ background:var(--indigo); color:#fff; font-size:13.5px; font-weight:600; padding:9px 16px; border-radius:8px; }
+  .back-link{ display:block; max-width:760px; margin:30px auto 0; color:#9A9AA6; font-size:13px; font-weight:600; padding:0 20px; }
+  .back-link:hover{ color:#fff; }
+  .content{ max-width:760px; margin:16px auto 90px; background:var(--card); border-radius:20px; padding:48px 52px; box-shadow:0 20px 50px rgba(0,0,0,0.35); }
+  .cat{ font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--teal); margin-bottom:14px; }
+  .content h1{ font-size:28px; font-weight:800; line-height:1.25; margin-bottom:20px; color:var(--ink); }
+  .content h2{ font-size:18px; font-weight:700; margin:32px 0 10px; color:var(--ink); }
+  .content h3{ font-size:15px; font-weight:700; margin:20px 0 6px; color:var(--ink); }
+  .content p{ font-size:14.5px; color:#3A3A44; margin-bottom:14px; }
+  .content ul{ margin:0 0 14px 20px; }
+  .content li{ font-size:14.5px; color:#3A3A44; margin-bottom:8px; }
+  .callout{ background:var(--indigo-soft); border-radius:12px; padding:16px 18px; font-size:13.5px; color:var(--indigo); font-style:italic; margin-top:24px; }
+
+  /* Motion design embed */
+  .motion-wrapper{
+    margin:32px 0;
+    border-radius:16px;
+    overflow:hidden;
+    background:#0D0D10;
+    box-shadow:0 12px 40px rgba(0,0,0,0.25);
+    position:relative;
+  }
+  .motion-wrapper iframe{
+    display:block;
+    width:100%;
+    height:520px;
+    border:none;
+  }
+  .motion-label{
+    text-align:center;
+    font-size:12px;
+    font-weight:600;
+    color:var(--ink-soft);
+    margin-top:10px;
+    margin-bottom:4px;
+    letter-spacing:.03em;
+  }
+
+  /* Step summary boxes */
+  .steps-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin:20px 0;
+  }
+  .step-box{
+    background:#F7F7FA;
+    border-radius:10px;
+    padding:12px 14px;
+    border-left:3px solid var(--teal);
+  }
+  .step-box .step-n{
+    font-size:10.5px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--teal);
+    margin-bottom:4px;
+  }
+  .step-box p{
+    font-size:13px;
+    margin-bottom:0;
+    color:var(--ink);
+  }
+
+  /* Reference block */
+  .ref-block{
+    margin-top:36px;
+    padding-top:24px;
+    border-top:1px solid var(--card-line);
+  }
+  .ref-block p{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-bottom:6px;
+  }
+  .ref-block .ref-title{
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.07em;
+    color:var(--ink-soft);
+    margin-bottom:10px;
+  }
+
+  @media (max-width:860px){
+    .content{ padding:30px 24px; }
+    .steps-grid{ grid-template-columns:1fr; }
+    .motion-wrapper iframe{ height:420px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="kaskadia-homepage-mockup-v2.html"><img src="logo-intelligence-produit.png" alt="Intelligence Produit" style="height:42px;"></a>
+    <div class="nav-links">
+      <a href="qui-suis-je.html">Qui suis-je ?</a>
+      <a href="offres.html">Offres</a>
+      <a href="outils.html">Outils</a>
+      <a href="ressources-demo.html" class="active">Ressources</a>
+    </div>
+    <a class="nav-cta" href="https://calendly.com/greggerardpro/30min" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  </div>
+</nav>
+
+<a href="ressources-demo.html" class="back-link">← Retour aux ressources</a>
+
+<div class="content">
+  <div class="cat">Organisation</div>
+  <h1>Voir autrement pour réussir</h1>
+
+  <p>Un produit peut être techniquement supérieur, sérieusement pensé, et concrètement utile, et rester invisible aux yeux de ses clients potentiels. Non pas parce qu'il est mauvais, mais parce qu'il est mal positionné. Le problème n'est pas le produit. C'est le contexte dans lequel il est présenté.</p>
+  <p>C'est la thèse centrale d'<em>Obviously Awesome</em>, le livre d'April Dunford sur le positionnement produit. Et c'est une thèse que les dirigeants de PME/PMI auraient tout intérêt à prendre au sérieux, parce qu'elle pointe un angle mort fréquent : on travaille sur le produit, sur la production, sur la distribution, mais rarement sur la façon dont le marché le perçoit.</p>
+
+  <h2>Le positionnement n'est pas un tagline</h2>
+
+  <p>La première erreur commune est de confondre positionnement et communication. Un positionnement n'est pas une phrase d'accroche, un slogan ou une rubrique "à propos" sur un site web. C'est quelque chose de plus fondamental : le contexte que vous créez dans l'esprit du client pour qu'il comprenne immédiatement pourquoi votre produit est fait pour lui.</p>
+  <p>Dunford illustre cela par une analogie simple : la première scène d'un film. Elle ne raconte pas encore l'histoire, elle pose le cadre qui permettra de tout interpréter correctement. Un bon positionnement fonctionne de la même façon. Il conditionne comment le client évalue le prix, quels concurrents il compare, quelle valeur il anticipe.</p>
+  <p>La plupart des entreprises ont un positionnement par défaut, celui qu'elles ont adopté au moment de leur création, souvent sans y réfléchir, et qu'elles n'ont jamais remis en question. Ce positionnement par défaut reflète comment les fondateurs ou dirigeants voient leur produit. Rarement comment le marché le vit.</p>
+
+  <h2>Cinq composantes pour un positionnement solide</h2>
+
+  <p>Avant d'entrer dans le processus, Dunford identifie cinq éléments qui définissent tout positionnement, et un sixième en bonus :</p>
+
+  <p><strong>Les alternatives compétitives</strong> sont ce que le client utiliserait si votre produit n'existait pas. Ce n'est souvent pas un concurrent direct, c'est Excel, un processus manuel, ou la décision de ne rien faire. <strong>Les attributs uniques</strong> sont les fonctionnalités ou capacités que vous avez et que ces alternatives n'offrent pas. <strong>La valeur</strong> traduit ces attributs en bénéfice concret pour le client, et elle doit être prouvable. <strong>La cible</strong> définit précisément qui est le plus susceptible de payer pour cette valeur. <strong>La catégorie de marché</strong> est le cadre dans lequel vous placez votre produit, et ce choix est stratégique : il active des hypothèses implicites sur le prix attendu, les concurrents pertinents et les critères d'évaluation. Enfin, une <strong>tendance pertinente</strong> peut renforcer l'urgence du message, à condition qu'elle amplifie la valeur plutôt qu'elle ne la remplace.</p>
+
+  <h2>Un processus en 10 étapes</h2>
+
+  <p>La méthode Dunford ne part pas du produit. Elle part des clients qui l'aiment déjà, pour comprendre pourquoi, et en déduire où et comment positionner ce que vous avez. Voici les 10 étapes en résumé :</p>
+
+  <div class="steps-grid">
+    <div class="step-box">
+      <div class="step-n">Étape 1</div>
+      <p>Identifier les clients les plus satisfaits et chercher leurs points communs.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-n">Étape 2</div>
+      <p>Constituer une équipe cross-fonctionnelle : ventes, marketing, produit, customer success.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-n">Étape 3</div>
+      <p>Aligner le vocabulaire et lâcher les croyances héritées sur le produit ("positioning baggage").</p>
+    </div>
+    <div class="step-box">
+      <div class="step-n">Étape 4</div>
+      <p>Lister les vraies alternatives compétitives, celles que le client utiliserait sans vous.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-n">Étape 5</div>
+      <p>Isoler les attributs uniques face à ces alternatives, sans filtrer à ce stade.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-n">Étape 6</div>
+      <p>Traduire chaque attribut en bénéfice, puis en valeur concrète pour le client.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-n">Étape 7</div>
+      <p>Identifier quels segments de marché valorisent le plus ces thèmes de valeur.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-n">Étape 8</div>
+      <p>Choisir la catégorie de marché qui met vos forces au centre, pas là où vous êtes né.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-n">Étape 9</div>
+      <p>Connecter à une tendance pertinente pour ajouter urgence et contexte, avec discernement.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-n">Étape 10</div>
+      <p>Documenter le positionnement pour qu'il soit partagé et appliqué dans toute l'organisation.</p>
+    </div>
+  </div>
+
+  <p>Explorez les 10 étapes en détail avec la présentation interactive ci-dessous :</p>
+
+  <div class="motion-wrapper">
+    <iframe src="../obviously-awesome-10-steps.html" title="Les 10 étapes du positionnement — Obviously Awesome"></iframe>
+  </div>
+  <p class="motion-label">Navigation : touches ← → ou boutons</p>
+
+  <h2>Ce que ça change en PME/PMI</h2>
+
+  <p>La question du positionnement n'est pas réservée aux startups technologiques ou aux grandes marques avec des équipes marketing étoffées. Elle se pose avec la même acuité dans une PME industrielle qui vend des produits sur un marché où plusieurs acteurs se ressemblent en apparence.</p>
+  <p>La différence entre deux entreprises similaires qui obtiennent des résultats très différents tient souvent là : l'une a une vision claire de pourquoi ses meilleurs clients la choisissent et le communique de façon cohérente. L'autre explique ses fonctionnalités sans jamais articuler la valeur qui en découle.</p>
+  <p>Le repositionnement n'est pas toujours spectaculaire. Il peut consister à changer la catégorie dans laquelle vous vous présentez, à centrer votre discours sur le problème que vous résolvez plutôt que sur ce que vous faites, ou simplement à arrêter de parler à tout le monde pour parler précisément aux clients qui ont le plus à gagner avec vous.</p>
+  <p>Ce renversement de perspective (partir du client qui vous aime, pas du produit que vous avez construit) est au fond ce que la méthode Dunford propose. Et c'est souvent le regard extérieur qui permet de le faire, parce qu'on est trop proche de son propre produit pour voir comment un inconnu le perçoit.</p>
+
+  <div class="callout">Vous avez l'impression que votre produit est bien meilleur que ce que vos résultats commerciaux laissent penser ? C'est souvent un problème de positionnement, pas de produit. Un diagnostic peut aider à identifier ce décalage et à le corriger.</div>
+
+  <div class="ref-block">
+    <p class="ref-title">Référence</p>
+    <p>Dunford, A. (2019). <em>Obviously Awesome: How to Nail Product Positioning So Customers Get It, Buy It, Love It.</em> Ambient Press.</p>
+  </div>
+</div>
+
+</body>
+</html>

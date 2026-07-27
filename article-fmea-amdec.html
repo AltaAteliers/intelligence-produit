@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMDEC : prioriser les défaillances avant qu'elles coûtent cher — Intelligence Produit</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700;800&display=swap');
+  :root{
+    --bg:#141417; --bg-soft:#1D1D22; --card:#FFFFFF; --card-line:#EBEAF0;
+    --ink:#1A1A22; --ink-soft:#6B6B76; --indigo:#5B4FE0; --indigo-soft:#EDEBFC;
+    --pink:#D65DB1; --teal:#1E9E86; --teal-soft:#E4F5F1; --amber:#E8A33D;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Inter', sans-serif; line-height:1.6; }
+  a{ color:inherit; text-decoration:none; }
+  nav{ padding:22px 20px 6px; }
+  .nav-inner{ max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .logo{ display:flex; align-items:center; }
+  .nav-links{ display:flex; gap:26px; font-size:14px; font-weight:500; color:#C8C8D0; }
+  .nav-links a.active{ color:#fff; border-bottom:2px solid var(--indigo); padding-bottom:4px; }
+  .nav-cta{ background:var(--indigo); color:#fff; font-size:13.5px; font-weight:600; padding:9px 16px; border-radius:8px; }
+  .back-link{ display:block; max-width:760px; margin:30px auto 0; color:#9A9AA6; font-size:13px; font-weight:600; padding:0 20px; }
+  .back-link:hover{ color:#fff; }
+  .content{ max-width:760px; margin:16px auto 90px; background:var(--card); border-radius:20px; padding:48px 52px; box-shadow:0 20px 50px rgba(0,0,0,0.35); }
+  .cat{ font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--indigo); margin-bottom:14px; }
+  .content h1{ font-size:28px; font-weight:800; line-height:1.25; margin-bottom:20px; color:var(--ink); }
+  .content h2{ font-size:18px; font-weight:700; margin:28px 0 10px; color:var(--ink); }
+  .content h3{ font-size:15px; font-weight:700; margin:18px 0 6px; color:var(--ink); }
+  .content p{ font-size:14.5px; color:#3A3A44; margin-bottom:14px; }
+  .content ul{ margin:0 0 14px 20px; }
+  .content li{ font-size:14.5px; color:#3A3A44; margin-bottom:8px; }
+  .callout{ background:var(--indigo-soft); border-radius:12px; padding:16px 18px; font-size:13.5px; color:var(--indigo); font-style:italic; margin-top:24px; }
+  .ipr-table{ width:100%; border-collapse:collapse; margin:18px 0; font-size:13.5px; }
+  .ipr-table th{ background:var(--indigo); color:#fff; padding:9px 12px; text-align:left; }
+  .ipr-table td{ border-bottom:1px solid var(--card-line); padding:9px 12px; color:#3A3A44; }
+  .ipr-table tr:last-child td{ border-bottom:none; }
+  @media (max-width:860px){ .content{ padding:30px 24px; } .ipr-table{ font-size:12px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="kaskadia-homepage-mockup-v2.html"><img src="logo-intelligence-produit.png" alt="Intelligence Produit" style="height:42px;"></a>
+    <div class="nav-links">
+      <a href="qui-suis-je.html">Qui suis-je ?</a>
+      <a href="offres.html">Offres</a>
+      <a href="outils.html">Outils</a>
+      <a href="ressources-demo.html" class="active">Ressources</a>
+    </div>
+    <a class="nav-cta" href="https://calendly.com/greggerardpro/30min" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  </div>
+</nav>
+
+<a href="ressources-demo.html" class="back-link">← Retour aux ressources</a>
+
+<div class="content">
+  <div class="cat">Diagnostic</div>
+  <h1>AMDEC : prioriser les défaillances avant qu'elles coûtent cher</h1>
+
+  <p>L'AMDEC (Analyse des Modes de Défaillance, de leurs Effets et de leur Criticité) est l'outil de référence quand la question n'est pas "pourquoi ça a planté ?" mais "qu'est-ce qui risque de planter, et qu'est-ce que ça nous coûterait ?". C'est une approche préventive, pas corrective. Elle vaut autant en conception de produit qu'en management de la qualité de production.</p>
+
+  <h2>Le principe : quantifier le risque pour prioriser l'action</h2>
+  <p>L'AMDEC consiste à lister les modes de défaillance possibles d'un composant, d'une fonction ou d'un processus, puis à évaluer chacun sur trois critères :</p>
+  <ul>
+    <li><b>Gravité (G)</b> : quel est l'impact sur le client ou sur la production si cette défaillance survient ? Note de 1 à 10.</li>
+    <li><b>Occurrence (O)</b> : quelle est la probabilité que cette défaillance se produise ? Note de 1 à 10.</li>
+    <li><b>Détectabilité (D)</b> : dans quelle mesure les contrôles en place permettent-ils de détecter la défaillance avant qu'elle atteigne le client ? Note de 1 à 10 (1 = très facile à détecter, 10 = quasiment indétectable).</li>
+  </ul>
+  <p>On multiplie les trois notes pour obtenir un <b>Indice de Priorité du Risque (IPR)</b>, parfois appelé RPN en anglais. Plus l'IPR est élevé, plus la défaillance est prioritaire.</p>
+
+  <table class="ipr-table">
+    <tr><th>Mode de défaillance</th><th>G</th><th>O</th><th>D</th><th>IPR</th></tr>
+    <tr><td>Joint d'étanchéité défectueux</td><td>8</td><td>3</td><td>2</td><td>48</td></tr>
+    <tr><td>Soudure non conforme</td><td>9</td><td>2</td><td>7</td><td>126</td></tr>
+    <tr><td>Vissage sous-torqué</td><td>6</td><td>5</td><td>4</td><td>120</td></tr>
+    <tr><td>Étiquetage illisible</td><td>4</td><td>6</td><td>1</td><td>24</td></tr>
+  </table>
+
+  <h2>Les trois types d'AMDEC</h2>
+  <p>L'outil s'applique à trois niveaux différents selon l'objectif :</p>
+  <ul>
+    <li><b>AMDEC produit</b> : analyse des défaillances potentielles du produit lui-même, idéalement pendant la phase de conception. Objectif : fiabiliser le design avant de lancer la production.</li>
+    <li><b>AMDEC processus</b> : analyse des défaillances possibles dans le procédé de fabrication. Objectif : réduire la variabilité et les rebuts.</li>
+    <li><b>AMDEC moyen / machine</b> : analyse des modes de défaillance des équipements de production. Objectif : prévenir les pannes et optimiser la maintenance.</li>
+  </ul>
+
+  <h2>Quand l'utiliser, et quand ne pas l'utiliser</h2>
+  <p>L'AMDEC est particulièrement adaptée aux situations suivantes : lancement d'un nouveau produit (avant que les problèmes n'apparaissent en production ou sur le terrain), refonte d'un produit existant suite à des retours SAV récurrents, mise en place ou révision d'un plan de contrôle qualité.</p>
+  <p>En revanche, l'AMDEC est lourde à conduire (un atelier sérieux demande plusieurs heures et implique des profils variés : conception, production, qualité, commercial). Ce n'est pas l'outil à saisir pour un diagnostic rapide sur un produit qui stagne en ventes : dans ce cas, la chaîne de valeur de Porter et l'Ishikawa seront plus efficaces et moins chronophages.</p>
+
+  <h2>Après l'AMDEC : les actions correctives</h2>
+  <p>L'IPR n'est qu'un classement, il n'indique pas quoi faire. Pour les défaillances à fort IPR, l'étape suivante consiste à définir des actions correctives ciblées sur l'un des trois facteurs : réduire la probabilité d'occurrence (améliorer le procédé), augmenter la détectabilité (renforcer les contrôles), ou réduire la gravité (modifier le design pour limiter l'impact en cas de défaillance). On recalcule ensuite l'IPR résiduel après action pour valider que le risque est bien maîtrisé.</p>
+
+  <div class="callout">Un produit qui génère du SAV récurrent a souvent un mode de défaillance prioritaire qui n'a jamais été formalisé. L'AMDEC le rend visible, et actionnable.</div>
+</div>
+
+</body>
+</html>

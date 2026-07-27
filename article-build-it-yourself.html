@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build It Yourself : pourquoi l'IA change la logique du logiciel en PME/PMI — Intelligence Produit</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700;800&display=swap');
+  :root{
+    --bg:#141417; --bg-soft:#1D1D22; --card:#FFFFFF; --card-line:#EBEAF0;
+    --ink:#1A1A22; --ink-soft:#6B6B76; --indigo:#5B4FE0; --indigo-soft:#EDEBFC;
+    --pink:#D65DB1; --teal:#1E9E86; --teal-soft:#E4F5F1; --amber:#E8A33D;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Inter', sans-serif; line-height:1.6; }
+  a{ color:inherit; text-decoration:none; }
+  nav{ padding:22px 20px 6px; }
+  .nav-inner{ max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .logo{ display:flex; align-items:center; }
+  .nav-links{ display:flex; gap:26px; font-size:14px; font-weight:500; color:#C8C8D0; }
+  .nav-links a.active{ color:#fff; border-bottom:2px solid var(--indigo); padding-bottom:4px; }
+  .nav-cta{ background:var(--indigo); color:#fff; font-size:13.5px; font-weight:600; padding:9px 16px; border-radius:8px; }
+  .back-link{ display:block; max-width:760px; margin:30px auto 0; color:#9A9AA6; font-size:13px; font-weight:600; padding:0 20px; }
+  .back-link:hover{ color:#fff; }
+  .content{ max-width:760px; margin:16px auto 90px; background:var(--card); border-radius:20px; padding:48px 52px; box-shadow:0 20px 50px rgba(0,0,0,0.35); }
+  .cat{ font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--teal); margin-bottom:14px; }
+  .content h1{ font-size:28px; font-weight:800; line-height:1.25; margin-bottom:20px; color:var(--ink); }
+  .content h2{ font-size:18px; font-weight:700; margin:28px 0 10px; color:var(--ink); }
+  .content h3{ font-size:15px; font-weight:700; margin:18px 0 6px; color:var(--ink); }
+  .content p{ font-size:14.5px; color:#3A3A44; margin-bottom:14px; }
+  .content ul{ margin:0 0 14px 20px; }
+  .content li{ font-size:14.5px; color:#3A3A44; margin-bottom:8px; }
+  .callout{ background:var(--indigo-soft); border-radius:12px; padding:16px 18px; font-size:13.5px; color:var(--indigo); font-style:italic; margin-top:24px; }
+  .contrast-box{ background:#F5F4FF; border-left:3px solid var(--indigo); border-radius:0 10px 10px 0; padding:16px 20px; margin:20px 0; }
+  .contrast-box p{ margin-bottom:0; font-size:13.5px; color:#3A3A44; }
+  .contrast-box strong{ color:var(--indigo); }
+  .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:20px 0; }
+  .col-card{ border-radius:10px; padding:16px 18px; }
+  .col-card.before{ background:#FFF3F3; border:1px solid #F5C5C5; }
+  .col-card.after{ background:var(--teal-soft); border:1px solid #B8E6DC; }
+  .col-card .col-label{ font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px; }
+  .col-card.before .col-label{ color:#CC5555; }
+  .col-card.after .col-label{ color:var(--teal); }
+  .col-card ul{ margin:0 0 0 16px; }
+  .col-card li{ font-size:13px; color:#3A3A44; margin-bottom:5px; }
+  @media (max-width:860px){ .content{ padding:30px 24px; } .two-col{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="kaskadia-homepage-mockup-v2.html"><img src="logo-intelligence-produit.png" alt="Intelligence Produit" style="height:42px;"></a>
+    <div class="nav-links">
+      <a href="qui-suis-je.html">Qui suis-je ?</a>
+      <a href="offres.html">Offres</a>
+      <a href="outils.html">Outils</a>
+      <a href="ressources-demo.html" class="active">Ressources</a>
+    </div>
+    <a class="nav-cta" href="https://calendly.com/greggerardpro/30min" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  </div>
+</nav>
+
+<a href="ressources-demo.html" class="back-link">← Retour aux ressources</a>
+
+<div class="content">
+  <div class="cat">Organisation</div>
+  <h1>Build It Yourself : pourquoi l'IA change la logique du logiciel en PME/PMI</h1>
+
+  <p>Pendant longtemps, une PME avait deux options pour s'outiller : acheter un logiciel généraliste qui couvrait 80 % de ses besoins mais jamais exactement les siens, ou payer une agence pour développer quelque chose sur mesure, lent, coûteux, et souvent obsolète avant d'être terminé. L'IA ouvre une troisième voie : construire soi-même, vite, et à un coût marginal.</p>
+  <p>Ce n'est pas une promesse technologique abstraite. C'est déjà en train de changer la façon dont les équipes produit et les dirigeants de PMI abordent leurs problèmes d'outillage.</p>
+
+  <h2>Le problème avec le logiciel généraliste</h2>
+  <p>Le logiciel packagé est conçu pour le plus grand nombre. Il est riche en fonctionnalités (dont 90 % ne seront jamais utilisées) et pauvre en adéquation avec les processus spécifiques d'une PME industrielle. On finit par adapter ses méthodes au logiciel plutôt que l'inverse, ce qui revient à réorganiser son atelier autour du chariot élévateur plutôt que de choisir le bon chariot.</p>
+  <p>Les abonnements s'accumulent. Les intégrations entre outils créent des frictions. Et la vraie douleur (simuler l'impact d'un changement de tarif sur sa chaîne de distribution, par exemple) reste souvent résolue dans une feuille Excel bricolée depuis dix ans.</p>
+
+  <h2>Ce que l'IA change concrètement</h2>
+  <p>Un outil de simulation de marge qui aurait nécessité six mois de développement et 40 000 € de budget il y a cinq ans peut aujourd'hui être produit en quelques jours de travail effectif, pour quelques centaines d'euros. Ce n'est pas une exagération, c'est l'ordre de grandeur réel, observable, de ce que permettent les outils actuels d'assistance à la conception logicielle.</p>
+  <p>Ce changement tient à trois évolutions simultanées :</p>
+  <ul>
+    <li><b>La génération de code est devenue fiable.</b> Un non-développeur peut décrire un besoin en langage naturel et obtenir un prototype fonctionnel en quelques heures. Un développeur peut multiplier sa vitesse d'exécution par trois ou quatre.</li>
+    <li><b>Le déploiement est devenu trivial.</b> Un outil web autonome peut être mis en ligne en quelques minutes, sans infrastructure à maintenir, accessible depuis n'importe quel navigateur.</li>
+    <li><b>L'itération est devenue quasi-instantanée.</b> Modifier un outil existant (changer une logique de calcul, ajouter un champ, corriger un comportement) prend des heures, pas des semaines.</li>
+  </ul>
+
+  <h2>Avant / après : deux façons d'aborder le même problème</h2>
+
+  <div class="two-col">
+    <div class="col-card before">
+      <div class="col-label">Avant — l'approche classique</div>
+      <ul>
+        <li>Cahier des charges → appel d'offres → sélection prestataire</li>
+        <li>3 à 9 mois de développement</li>
+        <li>Budget de 20 000 à 100 000 €</li>
+        <li>Livraison d'un outil qui ne correspond plus exactement au besoin initial</li>
+        <li>Maintenance et évolutions facturées en supplément</li>
+      </ul>
+    </div>
+    <div class="col-card after">
+      <div class="col-label">Maintenant — l'approche BIY</div>
+      <ul>
+        <li>Description du besoin en langage naturel</li>
+        <li>Prototype en 1 à 3 jours</li>
+        <li>Budget de quelques centaines d'euros</li>
+        <li>Outil ajusté en temps réel selon les retours terrain</li>
+        <li>Évolutions réalisables sans dépendance externe</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Ce que ça ne remplace pas</h2>
+  <p>Le Build It Yourself n'est pas la mort du logiciel packagé. Un ERP, un CRM, un outil de gestion de production avec des années de développement et d'intégrations, ça ne se remplace pas avec une IA et un week-end. Ce n'est pas l'objectif.</p>
+  <p>Ce que l'approche BIY remplace, c'est la couche d'outils intermédiaires : les tableaux de bord qui traînent sur Excel, les petits logiciels à 200 € par mois qui font 80 % de ce dont on a besoin, les outils de reporting qui nécessitent un consultant pour être configurés. Ce sont ces interstices (souvent les plus douloureux au quotidien) que le BIY comble efficacement.</p>
+
+  <h2>L'enjeu pour les PME/PMI : ne pas rater la fenêtre</h2>
+  <p>L'avantage compétitif du BIY est en train de se redistribuer. Les grandes entreprises investissent massivement dans des équipes internes d'IA appliquée. Les PME qui attendent que "la technologie soit plus mature" risquent de prendre du retard sur un enjeu qui n'est déjà plus expérimental.</p>
+  <p>La bonne nouvelle : la mise en mouvement ne requiert pas un département IT ni un budget de transformation digitale. Elle requiert une personne qui comprend le besoin métier, et un interlocuteur capable de le traduire en outil fonctionnel. C'est précisément l'articulation où un regard extérieur (qui maîtrise à la fois la logique produit et les outils de conception rapide) apporte le plus de valeur.</p>
+
+  <div class="callout">Vous avez un problème d'outillage récurrent dans votre équipe produit, une simulation que vous faites à la main, un rapport que personne n'utilise parce qu'il est trop lourd à mettre à jour ? C'est exactement le type de cas où un outil sur mesure, livré en quelques jours, change réellement la façon de travailler.</div>
+</div>
+
+</body>
+</html>

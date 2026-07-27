@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les 5 Pourquoi : remonter à la cause racine sans se perdre — Intelligence Produit</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700;800&display=swap');
+  :root{
+    --bg:#141417; --bg-soft:#1D1D22; --card:#FFFFFF; --card-line:#EBEAF0;
+    --ink:#1A1A22; --ink-soft:#6B6B76; --indigo:#5B4FE0; --indigo-soft:#EDEBFC;
+    --pink:#D65DB1; --teal:#1E9E86; --teal-soft:#E4F5F1; --amber:#E8A33D;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Inter', sans-serif; line-height:1.6; }
+  a{ color:inherit; text-decoration:none; }
+  nav{ padding:22px 20px 6px; }
+  .nav-inner{ max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .logo{ display:flex; align-items:center; }
+  .nav-links{ display:flex; gap:26px; font-size:14px; font-weight:500; color:#C8C8D0; }
+  .nav-links a.active{ color:#fff; border-bottom:2px solid var(--indigo); padding-bottom:4px; }
+  .nav-cta{ background:var(--indigo); color:#fff; font-size:13.5px; font-weight:600; padding:9px 16px; border-radius:8px; }
+  .back-link{ display:block; max-width:760px; margin:30px auto 0; color:#9A9AA6; font-size:13px; font-weight:600; padding:0 20px; }
+  .back-link:hover{ color:#fff; }
+  .content{ max-width:760px; margin:16px auto 90px; background:var(--card); border-radius:20px; padding:48px 52px; box-shadow:0 20px 50px rgba(0,0,0,0.35); }
+  .cat{ font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--indigo); margin-bottom:14px; }
+  .content h1{ font-size:28px; font-weight:800; line-height:1.25; margin-bottom:20px; color:var(--ink); }
+  .content h2{ font-size:18px; font-weight:700; margin:28px 0 10px; color:var(--ink); }
+  .content h3{ font-size:15px; font-weight:700; margin:18px 0 6px; color:var(--ink); }
+  .content p{ font-size:14.5px; color:#3A3A44; margin-bottom:14px; }
+  .content ul{ margin:0 0 14px 20px; }
+  .content li{ font-size:14.5px; color:#3A3A44; margin-bottom:8px; }
+  .callout{ background:var(--indigo-soft); border-radius:12px; padding:16px 18px; font-size:13.5px; color:var(--indigo); font-style:italic; margin-top:24px; }
+  .why-chain{ background:#F5F4FF; border-radius:12px; padding:20px 24px; margin:20px 0; }
+  .why-chain .step{ display:flex; gap:12px; margin-bottom:14px; align-items:flex-start; }
+  .why-chain .step:last-child{ margin-bottom:0; }
+  .why-chain .num{ background:var(--indigo); color:#fff; font-size:11px; font-weight:700; border-radius:50%; width:22px; height:22px; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+  .why-chain .txt{ font-size:13.5px; color:#3A3A44; line-height:1.5; }
+  .why-chain .txt b{ color:var(--indigo); }
+  @media (max-width:860px){ .content{ padding:30px 24px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="kaskadia-homepage-mockup-v2.html"><img src="logo-intelligence-produit.png" alt="Intelligence Produit" style="height:42px;"></a>
+    <div class="nav-links">
+      <a href="qui-suis-je.html">Qui suis-je ?</a>
+      <a href="offres.html">Offres</a>
+      <a href="outils.html">Outils</a>
+      <a href="ressources-demo.html" class="active">Ressources</a>
+    </div>
+    <a class="nav-cta" href="https://calendly.com/greggerardpro/30min" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  </div>
+</nav>
+
+<a href="ressources-demo.html" class="back-link">← Retour aux ressources</a>
+
+<div class="content">
+  <div class="cat">Diagnostic</div>
+  <h1>Les 5 Pourquoi : remonter à la cause racine sans se perdre</h1>
+
+  <p>Cinq fois "pourquoi", voilà tout l'outil. Sa simplicité est trompeuse : les 5 Pourquoi sont l'un des outils les plus mal utilisés en diagnostic industriel, précisément parce qu'ils paraissent évidents. On croit poser la bonne question, on s'arrête trop tôt, et on traite un symptôme en croyant traiter la cause.</p>
+
+  <h2>L'origine et le principe</h2>
+  <p>Sakichi Toyoda, fondateur de Toyota Industries, a développé cette méthode au début du XXe siècle. Elle a été formalisée dans le cadre du Toyota Production System dans les années 1970 et reste aujourd'hui un pilier du Lean manufacturing et du management de la qualité.</p>
+  <p>Le principe : face à un problème, on pose la question "pourquoi ?" de façon répétée (cinq fois en moyenne, parfois plus, parfois moins) jusqu'à atteindre une cause suffisamment profonde pour que l'action corrective empêche la récurrence. L'idée centrale est que les premières réponses sont presque toujours des symptômes, pas des causes.</p>
+
+  <h2>Un exemple concret</h2>
+
+  <div class="why-chain">
+    <div class="step"><span class="num">1</span><div class="txt"><b>Problème :</b> notre client a renvoyé un lot complet de produits.</div></div>
+    <div class="step"><span class="num">1</span><div class="txt"><b>Pourquoi ?</b> Les pièces sont hors tolérance dimensionnelle.</div></div>
+    <div class="step"><span class="num">2</span><div class="txt"><b>Pourquoi ?</b> La machine a dérivé en cours de production sans être recalibrée.</div></div>
+    <div class="step"><span class="num">3</span><div class="txt"><b>Pourquoi ?</b> Le plan de contrôle prévoyait un calibrage en début de poste seulement.</div></div>
+    <div class="step"><span class="num">4</span><div class="txt"><b>Pourquoi ?</b> Le plan de contrôle n'a pas été révisé depuis l'introduction d'une matière première plus sensible aux variations thermiques.</div></div>
+    <div class="step"><span class="num">5</span><div class="txt"><b>Pourquoi ?</b> Il n'y a pas de procédure formelle de révision du plan de contrôle lors d'un changement d'approvisionnement.</div></div>
+    <div class="step"><span class="num">→</span><div class="txt"><b>Cause racine :</b> absence de lien formalisé entre la gestion des achats et la qualité de production. L'action corrective est systémique, pas ponctuelle.</div></div>
+  </div>
+
+  <p>Sans remonter jusqu'au cinquième pourquoi, l'action corrective aurait probablement été "recalibrer plus souvent", ce qui résout le symptôme mais laisse la porte ouverte à d'autres dérives dès le prochain changement de matière ou de fournisseur.</p>
+
+  <h2>Les erreurs fréquentes</h2>
+  <ul>
+    <li><b>S'arrêter trop tôt.</b> Répondre au deuxième ou troisième pourquoi et croire qu'on a trouvé la cause. En général, on est encore dans la description du symptôme.</li>
+    <li><b>Glisser vers le blâme.</b> "Pourquoi ? Parce que l'opérateur n'a pas respecté la procédure." C'est une impasse : la cause racine est presque toujours un problème de système, pas de personne.</li>
+    <li><b>Diverger à chaque étape.</b> Chaque réponse ouvre souvent plusieurs nouvelles pistes. Il faut choisir la plus probable et la suivre jusqu'au bout, ou construire un arbre de causes si plusieurs pistes semblent également valides.</li>
+    <li><b>Poser des "pourquoi" sans vérification.</b> Chaque réponse doit être confirmée par des faits (données, observations, témoignages), pas par l'intuition de la personne la plus expérimentée dans la pièce.</li>
+  </ul>
+
+  <h2>Quand les utiliser ?</h2>
+  <p>Les 5 Pourquoi sont l'outil idéal une fois qu'on a identifié une cause candidate précise, par exemple après un brainstorming Ishikawa. Ils sont moins adaptés à l'exploration large d'un problème multi-facteurs, pour laquelle l'Ishikawa ou l'AMDEC seront plus efficaces.</p>
+
+  <div class="callout">La cause racine d'un problème récurrent est rarement là où on l'attend au premier regard. Vingt minutes de "pourquoi ?" bien menés valent mieux qu'un mois de correction symptomatique.</div>
+</div>
+
+</body>
+</html>
