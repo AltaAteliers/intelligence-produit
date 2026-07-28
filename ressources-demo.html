@@ -53,6 +53,7 @@
   .article-card{ background:var(--card); border-radius:16px; padding:22px; display:flex; flex-direction:column; gap:8px; }
   .article-card .cat{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; width:fit-content; padding:3px 10px; border-radius:20px; }
   .cat-diag{ background:var(--indigo-soft); color:var(--indigo); }
+  .cat-method{ background:#F0FBF8; color:var(--teal); }
   .cat-org{ background:var(--teal-soft); color:var(--teal); }
   .cat-design{ background:#FBEBD3; color:var(--amber); }
   .article-card h3{ font-size:16.5px; font-weight:700; line-height:1.35; margin-top:4px; }
@@ -112,6 +113,7 @@
 <div class="filters">
   <span class="filter-pill active">Tous</span>
   <span class="filter-pill">Diagnostic</span>
+  <span class="filter-pill">Méthode</span>
   <span class="filter-pill">Organisation</span>
   <span class="filter-pill">Conception</span>
 </div>
@@ -136,13 +138,13 @@
     <span class="read">Lire l'article →</span>
   </a>
   <a class="article-card" href="article-chaine-valeur-porter.html" style="display:flex;">
-    <span class="cat cat-diag">Diagnostic</span>
+    <span class="cat cat-method">Méthode</span>
     <h3>La chaîne de valeur de Porter : voir son produit de bout en bout</h3>
     <p>Comment dérouler un produit de sa conception jusqu'à la livraison pour repérer où la valeur (et la marge) s'évaporent.</p>
     <span class="read">Lire l'article →</span>
   </a>
   <a class="article-card" href="article-ishikawa.html" style="display:flex;">
-    <span class="cat cat-diag">Diagnostic</span>
+    <span class="cat cat-method">Méthode</span>
     <h3>Le diagramme d'Ishikawa : creuser les causes sans s'éparpiller</h3>
     <p>L'arête de poisson pour explorer toutes les familles de causes d'un problème avant de conclure, et ne pas traiter le mauvais symptôme.</p>
     <span class="read">Lire l'article →</span>
@@ -154,7 +156,7 @@
     <span class="read">Lire l'article →</span>
   </a>
   <a class="article-card" href="article-5-pourquoi.html" style="display:flex;">
-    <span class="cat cat-diag">Diagnostic</span>
+    <span class="cat cat-method">Méthode</span>
     <h3>Les 5 Pourquoi : remonter à la cause racine sans se perdre</h3>
     <p>Cinq questions successives pour aller au-delà du symptôme apparent et trouver la vraie origine d'un problème récurrent.</p>
     <span class="read">Lire l'article →</span>
@@ -196,6 +198,23 @@
     <span class="read">Lire l'article →</span>
   </a>
 </div>
+
+<script>
+  const pills = document.querySelectorAll('.filter-pill');
+  const cards = document.querySelectorAll('.article-card');
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const filter = pill.textContent.trim();
+      cards.forEach(card => {
+        const cat = card.querySelector('.cat') ? card.querySelector('.cat').textContent.trim() : '';
+        card.style.display = (filter === 'Tous' || cat === filter) ? 'flex' : 'none';
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
