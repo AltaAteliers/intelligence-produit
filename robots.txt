@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Intelligence Produit — intelligenceproduit.com
+# Politique de crawl : indexation autorisée pour tous les moteurs de recherche et agents IA.
+# Formation IA désactivée, indexation et réponses IA autorisées.
+Content-Signal: search=yes,ai-input=yes,ai-train=no,use=reference
+
+Sitemap: https://intelligenceproduit.com/sitemap.xml
