@@ -33,7 +33,10 @@
   .content li{ font-size:14.5px; color:#3A3A44; margin-bottom:6px; }
   .callout{ background:var(--teal-soft); border-radius:12px; padding:16px 18px; font-size:13.5px; color:var(--teal); font-style:italic; margin-top:24px; }
   .warning{ background:#FEF3F2; border-radius:12px; padding:16px 18px; font-size:13.5px; color:#B42318; margin:24px 0; }
-  @media (max-width:860px){ .content{ padding:30px 24px; } }
+  @media (max-width:860px){
+    .nav-inner{ flex-direction:column; align-items:center; gap:14px; }
+    .nav-links{ flex-wrap:wrap; justify-content:center; gap:16px; }
+ .content{ padding:30px 24px; } }
   footer{ max-width:1100px; margin:0 auto; padding:20px 20px 40px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; color:#7A7A85; font-size:12.5px; }
 </style>
 </head>
