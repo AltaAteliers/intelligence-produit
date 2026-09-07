@@ -30,6 +30,8 @@
   .content h2{ font-size:18px; font-weight:700; margin:28px 0 10px; color:var(--ink); }
   .content h3{ font-size:15px; font-weight:700; margin:18px 0 6px; color:var(--ink); }
   .content p{ font-size:14.5px; color:#3A3A44; margin-bottom:14px; }
+  .content p a, .content li a{ color:var(--indigo); text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px; }
+  .content p a:hover, .content li a:hover{ opacity:.75; }
   .content ul{ margin:0 0 14px 20px; }
   .content li{ font-size:14.5px; color:#3A3A44; margin-bottom:8px; }
   .callout{ background:var(--indigo-soft); border-radius:12px; padding:16px 18px; font-size:13.5px; color:var(--indigo); font-style:italic; margin-top:24px; }
@@ -62,7 +64,7 @@
   <div class="cat">Diagnostic</div>
   <h1>Le diagramme d'Ishikawa : creuser les causes sans s'éparpiller</h1>
 
-  <p>Vous avez localisé la zone qui coince (un taux de retour trop élevé, un argument commercial qui ne passe pas, une qualité de fabrication instable). Mais localiser la zone n'est pas comprendre la cause. C'est là qu'intervient le diagramme d'Ishikawa, aussi appelé diagramme en arête de poisson ou diagramme cause-effet.</p>
+  <p>Vous avez <a href="/article-diagnostic-360">localisé la zone qui coince</a> (un taux de retour trop élevé, un argument commercial qui ne passe pas, une qualité de fabrication instable). Mais localiser la zone n'est pas comprendre la cause. C'est là qu'intervient le diagramme d'Ishikawa, aussi appelé diagramme en arête de poisson ou diagramme cause-effet.</p>
 
   <h2>La logique de l'outil</h2>
   <p>Kaoru Ishikawa, ingénieur qualité japonais, a formalisé cet outil dans les années 1960 pour structurer la réflexion collective autour d'un problème. Le principe est simple : on pose le problème (l'effet) à droite, et on explore les causes possibles en remontant vers la gauche, organisées en grandes familles.</p>
@@ -82,10 +84,10 @@
 
   <h2>Comment s'en servir concrètement</h2>
   <p>L'outil est plus efficace en groupe qu'en solo. La démarche standard en trois étapes : formuler le problème de façon précise et factuelle (pas "qualité mauvaise" mais "taux de rebuts > 4 % sur la ligne A depuis mars"), ouvrir chaque famille en brainstorming sans filtre, puis croiser les causes identifiées pour repérer celles qui reviennent dans plusieurs familles, ce sont les plus probables.</p>
-  <p>La limite fréquente : on remplit le diagramme, on identifie une ou deux causes "évidentes", et on s'arrête là. L'Ishikawa n'est pas une fin en soi, il prépare le terrain pour un outil de remontée en profondeur, comme les 5 Pourquoi.</p>
+  <p>La limite fréquente : on remplit le diagramme, on identifie une ou deux causes "évidentes", et on s'arrête là. L'Ishikawa n'est pas une fin en soi, il prépare le terrain pour un outil de remontée en profondeur, comme <a href="/article-5-pourquoi">les 5 Pourquoi</a>.</p>
 
   <h2>Ishikawa ou 5 Pourquoi : lequel choisir ?</h2>
-  <p>Les deux ne s'opposent pas, ils se complètent. Ishikawa sert à explorer en largeur : couvrir toutes les familles de causes possibles sur un problème dont les origines sont encore floues. Les 5 Pourquoi servent à creuser en profondeur : remonter une cause précise jusqu'à sa racine. En pratique : Ishikawa d'abord pour ne pas se tromper de piste, 5 Pourquoi ensuite sur les causes candidates retenues.</p>
+  <p>Les deux ne s'opposent pas, ils se complètent. Leur articulation dans la <a href="/article-diagnostic-combine">séquence Porter → Ishikawa → AMDEC → 5 Pourquoi</a> décrit comment les enchaîner sans se tromper d'étape. Ishikawa sert à explorer en largeur : couvrir toutes les familles de causes possibles sur un problème dont les origines sont encore floues. Les 5 Pourquoi servent à creuser en profondeur : remonter une cause précise jusqu'à sa racine. En pratique : Ishikawa d'abord pour ne pas se tromper de piste, 5 Pourquoi ensuite sur les causes candidates retenues.</p>
 
   <div class="callout">Un problème récurrent a presque toujours une cause cachée derrière la cause visible. Quinze minutes avec le bon groupe et ce diagramme suffisent souvent à faire la différence.</div>
 </div>
