@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obviously Awesome — Les 10 étapes du positionnement</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+  :root {
+    --bg: #0D0D10;
+    --indigo: #5B4FE0;
+    --pink: #D65DB1;
+    --teal: #1E9E86;
+    --amber: #E8A33D;
+    --white: #FFFFFF;
+    --gray: #9A9AA6;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    font-family: 'Inter', sans-serif;
+    color: var(--white);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /* ---- INTRO SCREEN ---- */
+  #intro {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background: var(--bg);
+    transition: opacity 0.8s ease;
+  }
+  #intro.hidden { opacity: 0; pointer-events: none; }
+
+  .intro-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--gray);
+    margin-bottom: 18px;
+  }
+
+  .intro-title {
+    font-size: clamp(32px, 6vw, 64px);
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.1;
+    max-width: 700px;
+    background: linear-gradient(135deg, var(--indigo), var(--pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
+  }
+
+  .intro-sub {
+    font-size: 15px;
+    color: var(--gray);
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  .btn-start {
+    background: linear-gradient(135deg, var(--indigo), var(--pink));
+    color: #fff;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 32px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+    letter-spacing: .02em;
+  }
+  .btn-start:hover { transform: scale(1.04); box-shadow: 0 0 40px rgba(91,79,224,.5); }
+
+  /* ---- STAGE ---- */
+  #stage {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Background animated gradient blob */
+  .blob {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0;
+    transition: all 1s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .blob-1 { width: 500px; height: 500px; top: -100px; left: -150px; }
+  .blob-2 { width: 400px; height: 400px; bottom: -80px; right: -100px; }
+
+  /* ---- STEP CARD ---- */
+  .step-card {
+    position: absolute;
+    max-width: 720px;
+    width: 90vw;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+    transition: opacity 0.6s cubic-bezier(.22,1,.36,1), transform 0.6s cubic-bezier(.22,1,.36,1);
+    pointer-events: none;
+    z-index: 10;
+  }
+  .step-card.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+  .step-card.exit {
+    opacity: 0;
+    transform: translateY(-40px) scale(1.02);
+  }
+
+  .step-number {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    margin-bottom: 20px;
+    opacity: .7;
+  }
+
+  .step-icon {
+    font-size: 56px;
+    margin-bottom: 24px;
+    display: block;
+    animation: floatIcon 3s ease-in-out infinite;
+  }
+  @keyframes floatIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .step-title {
+    font-size: clamp(26px, 5vw, 42px);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -.01em;
+  }
+
+  .step-desc {
+    font-size: 16px;
+    color: #C8C8D8;
+    line-height: 1.65;
+    max-width: 560px;
+    margin: 0 auto 32px;
+  }
+
+  .step-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-bottom: 8px;
+  }
+
+  .key-question {
+    background: rgba(255,255,255,.06);
+    border-radius: 14px;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--white);
+    max-width: 480px;
+    margin: 0 auto;
+    border: 1px solid rgba(255,255,255,.1);
+  }
+
+  /* ---- CONTROLS ---- */
+  #controls {
+    position: fixed;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 50;
+    opacity: 0;
+    transition: opacity .5s;
+  }
+  #controls.visible { opacity: 1; }
+
+  .ctrl-btn {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 11px 22px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background .2s;
+  }
+  .ctrl-btn:hover { background: rgba(255,255,255,.15); }
+  .ctrl-btn:disabled { opacity: .3; cursor: default; }
+
+  .ctrl-btn.primary {
+    background: linear-gradient(135deg, var(--indigo), var(--pink));
+    border-color: transparent;
+  }
+  .ctrl-btn.primary:hover { opacity: .9; }
+
+  /* ---- PROGRESS ---- */
+  #progress {
+    position: fixed;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 50;
+    opacity: 0;
+    transition: opacity .5s;
+  }
+  #progress.visible { opacity: 1; }
+
+  .prog-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.25);
+    transition: all .4s;
+    cursor: pointer;
+  }
+  .prog-dot.done { background: rgba(255,255,255,.5); width: 18px; border-radius: 3px; }
+  .prog-dot.current { width: 28px; border-radius: 3px; }
+
+  /* ---- FINAL SCREEN ---- */
+  #final {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    background: var(--bg);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .8s;
+    text-align: center;
+    padding: 40px;
+  }
+  #final.visible { opacity: 1; pointer-events: auto; }
+
+  .final-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    max-width: 700px;
+    margin: 32px auto;
+  }
+  .final-chip {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 10px;
+    padding: 10px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #C8C8D8;
+    text-align: center;
+    line-height: 1.35;
+  }
+  .final-chip span { display: block; font-size: 16px; margin-bottom: 4px; }
+
+  .btn-restart {
+    background: transparent;
+    border: 1.5px solid rgba(255,255,255,.3);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: border-color .2s;
+  }
+  .btn-restart:hover { border-color: rgba(255,255,255,.6); }
+
+  /* Color variants */
+  .c-indigo { color: #8B7FF0; }
+  .c-pink    { color: var(--pink); }
+  .c-teal    { color: #3DBFA4; }
+  .c-amber   { color: var(--amber); }
+
+  .bg-indigo { background: rgba(91,79,224,.15); border: 1px solid rgba(91,79,224,.3); }
+  .bg-pink   { background: rgba(214,93,177,.15); border: 1px solid rgba(214,93,177,.3); }
+  .bg-teal   { background: rgba(30,158,134,.15); border: 1px solid rgba(30,158,134,.3); }
+  .bg-amber  { background: rgba(232,163,61,.15); border: 1px solid rgba(232,163,61,.3); }
+</style>
+</head>
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+  <div class="intro-eyebrow">April Dunford — Obviously Awesome</div>
+  <div class="intro-title">Les 10 étapes du positionnement produit</div>
+  <div class="intro-sub">Une méthode pour que votre produit soit perçu comme évidemment indispensable.</div>
+  <button class="btn-start" onclick="startPresentation()">Commencer →</button>
+</div>
+
+<!-- BLOBS -->
+<div class="blob blob-1" id="blob1"></div>
+<div class="blob blob-2" id="blob2"></div>
+
+<!-- STAGE -->
+<div id="stage"></div>
+
+<!-- PROGRESS -->
+<div id="progress"></div>
+
+<!-- CONTROLS -->
+<div id="controls">
+  <button class="ctrl-btn" id="btnPrev" onclick="prev()">← Précédent</button>
+  <span id="stepCounter" style="font-size:13px; color:var(--gray); font-weight:600;"></span>
+  <button class="ctrl-btn primary" id="btnNext" onclick="next()">Suivant →</button>
+</div>
+
+<!-- FINAL -->
+<div id="final">
+  <div class="intro-eyebrow">Récapitulatif</div>
+  <div class="intro-title" style="font-size:clamp(24px,4vw,40px);">Les 10 étapes en un coup d'œil</div>
+  <div class="final-grid" id="finalGrid"></div>
+  <button class="btn-restart" onclick="restart()">↺ Recommencer</button>
+</div>
+
+<script>
+const steps = [
+  {
+    number: "Étape 1 sur 10",
+    icon: "🔍",
+    title: "Comprendre les clients qui adorent votre produit",
+    desc: "Identifiez vos meilleurs clients — ceux qui comprennent immédiatement la valeur et en parlent autour d'eux. Cherchez les patterns communs entre eux : secteur, taille, contexte, déclencheur d'achat.",
+    question: "Qui sont nos clients les plus heureux, et qu'ont-ils en commun ?",
+    color: "indigo",
+    blob1: "rgba(91,79,224,0.35)", blob2: "rgba(91,79,224,0.15)"
+  },
+  {
+    number: "Étape 2 sur 10",
+    icon: "👥",
+    title: "Constituer une équipe de positionnement",
+    desc: "Le positionnement n'est pas un exercice marketing solo. Il faut ventes, marketing, produit et customer success autour de la table — 3 à 12 personnes. Chaque fonction apporte une perspective différente sur la perception client.",
+    question: "Qui dans l'organisation a des données sur la façon dont les clients perçoivent notre produit ?",
+    color: "teal",
+    blob1: "rgba(30,158,134,0.35)", blob2: "rgba(30,158,134,0.15)"
+  },
+  {
+    number: "Étape 3 sur 10",
+    icon: "🧹",
+    title: "Aligner le vocabulaire et lâcher le \"positioning baggage\"",
+    desc: "L'équipe doit partager la même définition du positionnement et reconnaître ses biais historiques. Ce que vous croyez savoir sur votre produit peut vous aveugler sur la façon dont de nouveaux clients le perçoivent.",
+    question: "Quelle vision de notre produit avons-nous héritée de son histoire — et est-elle encore juste ?",
+    color: "pink",
+    blob1: "rgba(214,93,177,0.35)", blob2: "rgba(214,93,177,0.15)"
+  },
+  {
+    number: "Étape 4 sur 10",
+    icon: "⚔️",
+    title: "Lister les vraies alternatives compétitives",
+    desc: "Pas ce que vous pensez être vos concurrents — ce que vos clients utiliseraient si vous n'existiez pas. Souvent : Excel, un process manuel, un prestataire interne, ou rien du tout.",
+    question: "Que feraient nos meilleurs clients si notre produit disparaissait demain ?",
+    color: "amber",
+    blob1: "rgba(232,163,61,0.35)", blob2: "rgba(232,163,61,0.15)"
+  },
+  {
+    number: "Étape 5 sur 10",
+    icon: "⚡",
+    title: "Isoler vos attributs uniques",
+    desc: "Face à ces alternatives, quelles sont vos fonctionnalités ou capacités que personne d'autre n'a ? Listez tout sans filtrer. Incluez les attributs perçus négativement par certains — ils peuvent être décisifs pour d'autres.",
+    question: "Qu'est-ce que nous faisons ou avons, que nos vraies alternatives ne peuvent pas offrir ?",
+    color: "indigo",
+    blob1: "rgba(91,79,224,0.35)", blob2: "rgba(91,79,224,0.15)"
+  },
+  {
+    number: "Étape 6 sur 10",
+    icon: "💎",
+    title: "Relier les attributs à des thèmes de valeur",
+    desc: "Chaque feature doit se traduire en bénéfice, puis en valeur réelle. \"Caméra 15 MP\" → \"photos nettes\" → \"images exploitables même imprimées en grand\". Sans cette traduction, le client ne comprend pas pourquoi ça compte.",
+    question: "Pour chaque attribut unique : qu'est-ce que ça change concrètement dans la vie du client ?",
+    color: "teal",
+    blob1: "rgba(30,158,134,0.35)", blob2: "rgba(30,158,134,0.15)"
+  },
+  {
+    number: "Étape 7 sur 10",
+    icon: "🎯",
+    title: "Déterminer qui s'en préoccupe vraiment",
+    desc: "Chaque thème de valeur attire un profil de client différent. Cette étape croise vos valeurs avec des segments de marché pour identifier qui y est le plus sensible — et donc qui est votre priorité commerciale.",
+    question: "Quels types de clients sont les plus susceptibles de payer cher pour cette valeur spécifique ?",
+    color: "pink",
+    blob1: "rgba(214,93,177,0.35)", blob2: "rgba(214,93,177,0.15)"
+  },
+  {
+    number: "Étape 8 sur 10",
+    icon: "🗂️",
+    title: "Choisir la bonne catégorie de marché",
+    desc: "La catégorie choisie crée des attentes implicites : prix acceptable, concurrents perçus, critères d'évaluation. Se repositionner de \"base de données\" à \"data warehouse\" peut transformer la perception du même produit.",
+    question: "Dans quelle catégorie notre produit excelle-t-il — pas où il est né, mais où il domine ?",
+    color: "amber",
+    blob1: "rgba(232,163,61,0.35)", blob2: "rgba(232,163,61,0.15)"
+  },
+  {
+    number: "Étape 9 sur 10",
+    icon: "🌊",
+    title: "S'appuyer sur une tendance (avec précaution)",
+    desc: "Une tendance de fond — IA, transition énergétique, digitalisation — peut rendre le positionnement plus urgent. Mais elle doit amplifier votre message, pas le remplacer. Une tendance sans substance ne convainc personne.",
+    question: "Quelle tendance de marché rend notre valeur encore plus urgente aujourd'hui ?",
+    color: "indigo",
+    blob1: "rgba(91,79,224,0.35)", blob2: "rgba(30,158,134,0.2)"
+  },
+  {
+    number: "Étape 10 sur 10",
+    icon: "📋",
+    title: "Formaliser et partager le positionnement",
+    desc: "Documentez le résultat sous une forme utilisable par toute l'organisation : pas un tagline, mais un document de référence qui aligne les discours commerciaux, marketing, produit et recrutement.",
+    question: "Comment s'assurer que tout le monde dans l'organisation utilise le même positionnement ?",
+    color: "teal",
+    blob1: "rgba(30,158,134,0.35)", blob2: "rgba(91,79,224,0.2)"
+  }
+];
+
+const stepEmojis = ["🔍","👥","🧹","⚔️","⚡","💎","🎯","🗂️","🌊","📋"];
+const stepLabels = ["Clients heureux","Équipe","Baggage","Alternatives","Attributs","Valeur","Cibles","Catégorie","Tendance","Formaliser"];
+
+let current = 0;
+let isAnimating = false;
+let cards = [];
+
+function startPresentation() {
+  document.getElementById('intro').classList.add('hidden');
+  setTimeout(() => {
+    document.getElementById('intro').style.display = 'none';
+    buildProgress();
+    buildCards();
+    showCard(0);
+    document.getElementById('controls').classList.add('visible');
+    document.getElementById('progress').classList.add('visible');
+  }, 800);
+}
+
+function buildProgress() {
+  const prog = document.getElementById('progress');
+  steps.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'prog-dot';
+    dot.id = 'dot-' + i;
+    dot.onclick = () => goTo(i);
+    prog.appendChild(dot);
+  });
+}
+
+function buildCards() {
+  const stage = document.getElementById('stage');
+  const finalGrid = document.getElementById('finalGrid');
+
+  steps.forEach((s, i) => {
+    const card = document.createElement('div');
+    card.className = 'step-card';
+    card.id = 'card-' + i;
+
+    const tagClass = `bg-${s.color}`;
+    const textClass = `c-${s.color}`;
+
+    card.innerHTML = `
+      <div class="step-number ${textClass}">${s.number}</div>
+      <span class="step-icon">${s.icon}</span>
+      <div class="step-title">${s.title}</div>
+      <div class="step-desc">${s.desc}</div>
+      <div class="key-question ${tagClass}">"${s.question}"</div>
+    `;
+    stage.appendChild(card);
+    cards.push(card);
+
+    // Final grid chip
+    const chip = document.createElement('div');
+    chip.className = 'final-chip';
+    chip.innerHTML = `<span>${s.icon}</span>${i+1}. ${stepLabels[i]}`;
+    finalGrid.appendChild(chip);
+  });
+}
+
+function showCard(index) {
+  // Update blobs
+  const s = steps[index];
+  const b1 = document.getElementById('blob1');
+  const b2 = document.getElementById('blob2');
+  b1.style.background = s.blob1;
+  b1.style.opacity = '1';
+  b2.style.background = s.blob2;
+  b2.style.opacity = '1';
+
+  // Update progress dots
+  steps.forEach((_, i) => {
+    const dot = document.getElementById('dot-' + i);
+    dot.className = 'prog-dot';
+    dot.style.background = '';
+    if (i < index) dot.classList.add('done');
+    if (i === index) {
+      dot.classList.add('current');
+      const colors = { indigo: '#5B4FE0', teal: '#1E9E86', pink: '#D65DB1', amber: '#E8A33D' };
+      dot.style.background = colors[s.color];
+    }
+  });
+
+  // Show card
+  cards[index].classList.add('active');
+
+  // Update counter
+  document.getElementById('stepCounter').textContent = `${index + 1} / ${steps.length}`;
+
+  // Buttons
+  document.getElementById('btnPrev').disabled = index === 0;
+  const btnNext = document.getElementById('btnNext');
+  if (index === steps.length - 1) {
+    btnNext.textContent = 'Récapitulatif →';
+  } else {
+    btnNext.textContent = 'Suivant →';
+  }
+}
+
+function hideCard(index, direction) {
+  const card = cards[index];
+  card.classList.remove('active');
+  card.classList.add('exit');
+  setTimeout(() => {
+    card.classList.remove('exit');
+  }, 600);
+}
+
+function goTo(index) {
+  if (isAnimating || index === current) return;
+  isAnimating = true;
+  hideCard(current, index > current ? 'forward' : 'back');
+  current = index;
+  setTimeout(() => {
+    showCard(current);
+    isAnimating = false;
+  }, 350);
+}
+
+function next() {
+  if (isAnimating) return;
+  if (current === steps.length - 1) {
+    showFinal();
+    return;
+  }
+  goTo(current + 1);
+}
+
+function prev() {
+  if (isAnimating || current === 0) return;
+  goTo(current - 1);
+}
+
+function showFinal() {
+  document.getElementById('controls').classList.remove('visible');
+  document.getElementById('progress').classList.remove('visible');
+  cards[current].classList.remove('active');
+  document.getElementById('final').classList.add('visible');
+  document.getElementById('blob1').style.background = 'rgba(91,79,224,0.3)';
+  document.getElementById('blob2').style.background = 'rgba(214,93,177,0.2)';
+}
+
+function restart() {
+  document.getElementById('final').classList.remove('visible');
+  current = 0;
+  showCard(0);
+  document.getElementById('controls').classList.add('visible');
+  document.getElementById('progress').classList.add('visible');
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ') next();
+  if (e.key === 'ArrowLeft') prev();
+});
+</script>
+</body>
+</html>
